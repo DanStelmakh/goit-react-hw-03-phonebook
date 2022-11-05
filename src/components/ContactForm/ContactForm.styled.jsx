@@ -24,3 +24,10 @@ export const Btn = styled.button`
     background-color: rgba(255, 162, 0, 0.5);
   }
 `;
+
+export const Txt = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+`;

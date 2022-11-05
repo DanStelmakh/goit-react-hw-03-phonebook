@@ -1,5 +1,13 @@
 import React from 'react';
-import { Form, Input, Btn } from 'components/ContactForm/ContactForm.styled';
+import { ReactComponent as IconTel } from '../../icons/telephone.svg';
+import { ReactComponent as IconAdd } from '../../icons/add-user.svg';
+
+import {
+  Form,
+  Input,
+  Btn,
+  Txt,
+} from 'components/ContactForm/ContactForm.styled';
 class ContactForm extends React.Component {
   state = {
     name: '',
@@ -27,7 +35,9 @@ class ContactForm extends React.Component {
     const { handleSubmit, handleChange } = this;
     return (
       <Form onSubmit={handleSubmit}>
-        <p>Name</p>
+        <Txt>
+          Name <IconAdd width="20px" height="20px" />
+        </Txt>
 
         <Input
           value={name}
@@ -38,7 +48,9 @@ class ContactForm extends React.Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-        <p>Number</p>
+        <Txt>
+          Number <IconTel width="20px" height="20px" />
+        </Txt>
         <Input
           value={number}
           onChange={handleChange}
