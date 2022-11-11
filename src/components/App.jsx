@@ -12,9 +12,9 @@ class App extends React.Component {
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
-  addName = (text, number) => {
+  addContact = (name, number) => {
     const newContact = {
-      name: text,
+      name,
       id: shortid.generate(),
       number,
     };
@@ -50,16 +50,15 @@ class App extends React.Component {
     }
   }
   render() {
-    console.log(`did render`);
     const { filter, contacts } = this.state;
-    const { addName, state, changeFilter, removeContact } = this;
+    const { addContact, state, changeFilter, removeContact } = this;
     const filteredContacts = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
     );
     return (
       <Container>
         <h1>Phonebook</h1>
-        <ContactForm onSubmit={addName} state={state}></ContactForm>
+        <ContactForm onSubmit={addContact} state={state}></ContactForm>
         <h2>Contacts</h2>
         <Filter value={filter} onChange={changeFilter}></Filter>
         <ContactList

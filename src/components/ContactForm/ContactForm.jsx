@@ -40,6 +40,7 @@ class ContactForm extends React.Component {
         </Txt>
 
         <Input
+          autoComplete="off"
           value={name}
           onChange={handleChange}
           type="text"
@@ -52,6 +53,7 @@ class ContactForm extends React.Component {
           Number <IconTel width="20px" height="20px" />
         </Txt>
         <Input
+          autoComplete="off"
           value={number}
           onChange={handleChange}
           type="tel"
